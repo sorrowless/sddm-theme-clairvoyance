@@ -96,7 +96,7 @@ Item {
       right: userProfile.left
       rightMargin: 30
     }
-    y: parent.height / 2
+    y: parent.height / 2 - 40
     width: 32
     height: 32
     source: "Assets/Selector.png"
@@ -114,8 +114,8 @@ Item {
   Item {
     id: userProfile
 
-    width: 200
-    height: 350
+    width: (config.enableHDPI == "true") ? 250 : 200
+    height: (config.enableHDPI == "true") ? 450 : 350
 
     y:0
     anchors {
@@ -127,10 +127,10 @@ Item {
     Text {
       id: usersName
 
-      color: "white"
+      color: "gray"
       font {
-        family: "FiraMono"
-        pointSize: 20
+        family: config.fontFamily
+        pointSize: (config.enableHDPI == "true") ? 12 : 20
       }
       text: loginFrame.name
       anchors.horizontalCenter: parent.horizontalCenter
@@ -140,8 +140,8 @@ Item {
     Image {
       id: usersPic
 
-      width: 128
-      height: 128
+      width: (config.enableHDPI == "true") ? 192 : 128
+      height: (config.enableHDPI == "true") ? 192 : 128
       anchors {
         top: usersName.bottom
         topMargin: 50
@@ -156,10 +156,10 @@ Item {
     id: passwordStatus
 
     text: "Incorrect Password!"
-    color: "white"
+    color: "gray"
     font {
       pointSize: 10
-      family: "FiraMono"
+      family: config.fontFamily
     }
 
     anchors {
@@ -172,7 +172,7 @@ Item {
 
     Timer {
       id: passwordTimer
-      interval: 3000
+      interval: 1000
       running: false
       repeat: false
       onTriggered: {
@@ -211,10 +211,10 @@ Item {
       text: "Password..."
       color: "white"
       font {
-        pointSize: 14
-        family: "FiraMono"
+        pointSize: (config.enableHDPI == "true") ? 11 : 14
+        family: config.fontFamily
       }
-      opacity: 0.3
+      opacity: 0.15
     }
 
     TextInput {
@@ -227,8 +227,8 @@ Item {
         rightMargin: 50
       }
       font {
-        pointSize: 14
-        family: "FiraMono"
+        pointSize: (config.enableHDPI == "true") ? 13 : 14
+        family: config.fontFamily
         letterSpacing: 2
       }
       color: "white"
@@ -271,7 +271,7 @@ Item {
       left: passwordBox.left
     }
     color: "white"
-    opacity: 0.3
+    opacity: 0.15
     radius: 4
   }
 

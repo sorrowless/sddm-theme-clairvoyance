@@ -49,7 +49,7 @@ Item {
         opacity: (delegateArea.containsMouse || sessionSelect.currentIndex == index) ? 1 : 0.3
         font {
           pointSize: (config.enableHDPI == "true") ? 6 : 12
-          family: "FiraMono"
+          family: config.fontFamily
         }
         wrapMode: Text.Wrap
         horizontalAlignment: Text.AlignHCenter

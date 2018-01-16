@@ -3,7 +3,7 @@ import QtQuick 2.0
 Item {
 
   width: 250
-  height: 250
+  height: (config.enableHDPI == "true") ? 350 : 250
 
   property string name: model.name
   property string icon: model.icon
@@ -12,10 +12,10 @@ Item {
   Text {
     id: usersName
 
-    color: "white"
+    color: "gray"
     font {
-      family: "FiraMono"
-      pointSize: 20
+      family: config.fontFamily
+      pointSize: (config.enableHDPI == "true") ? 12 : 20
     }
     text: name
     anchors.horizontalCenter: parent.horizontalCenter
@@ -25,8 +25,8 @@ Item {
   Image {
     id: usersPic
 
-    width: 128
-    height: 128
+    width: 192
+    height: 192
     anchors {
       top: usersName.bottom
       topMargin: 50
