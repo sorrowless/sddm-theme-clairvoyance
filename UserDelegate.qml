@@ -2,7 +2,7 @@ import QtQuick 2.0
 
 Item {
 
-  width: 250
+  width: 400
   height: (config.enableHDPI == "true") ? 350 : 250
 
   property string name: model.name
