@@ -10,6 +10,7 @@ Item {
   anchors.verticalCenter: page.verticalCenter
 
   property string name
+  property string realName
   property string icon
   focus: false
 
@@ -132,7 +133,7 @@ Item {
         family: config.fontFamily
         pointSize: (config.enableHDPI == "true") ? 12 : 20
       }
-      text: loginFrame.name
+      text: loginFrame.realName
       anchors.horizontalCenter: parent.horizontalCenter
     }
 
