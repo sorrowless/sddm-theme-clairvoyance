@@ -228,7 +228,7 @@ Item {
         rightMargin: 50
       }
       font {
-        pointSize: (config.enableHDPI == "true") ? 13 : 14
+        pointSize: (config.enableHDPI == "true") ? 6 : 14
         family: config.fontFamily
         letterSpacing: 2
       }
